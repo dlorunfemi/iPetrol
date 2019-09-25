@@ -23,7 +23,7 @@ const routes: Routes = [
         loadChildren: './station/show/show.module#ShowPageModule'
       },
       {
-        path: 'edit',
+        path: 'edit/:id',
         loadChildren: './station/edit/edit.module#EditPageModule'
       },
       {
@@ -45,7 +45,8 @@ const routes: Routes = [
         loadChildren: './tank/add/add.module#AddPageModule'
       },
       {
-        path: 'edit',
+        path: 'edit/:id',
+
         loadChildren: './tank/edit/edit.module#EditPageModule'
       },
 

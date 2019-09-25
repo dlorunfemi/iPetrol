@@ -9,6 +9,8 @@ import { Subject, Observable } from 'rxjs';
 export class StationService {
   formData: Station = new Station();
 
+  sta: Observable<Station[]>;
+
   private listeners = new Subject<any>();
 
   readonly apiUrl = 'https://my-json-server.typicode.com/dormynion/iPetrol';
@@ -19,12 +21,22 @@ export class StationService {
     return this.http.get<Station[]>(this.apiUrl + '/station');
   }
 
+  getStation(id: number) {
+    return this.http.get<Station[]>(this.apiUrl + '/station/' + id);
+    // this.sta = this.getStationList();
+    // return {
+    //   ...this.sta.subscribe(station => {
+    //     return station.id === id;
+    //   })
+    // };
+  }
+
   addStation(station: Station) {
     return this.http.post(this.apiUrl + '/station/', station);
   }
 
   updateStation(station: Station) {
-    return this.http.put(this.apiUrl + '/station', station);
+    return this.http.put(this.apiUrl + '/station/', station);
   }
 
   deleteStation(id: number) {
@@ -38,4 +50,5 @@ export class StationService {
   filter(filterBy: string) {
     this.listeners.next(filterBy);
   }
+
 }

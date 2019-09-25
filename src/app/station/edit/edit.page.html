@@ -1,9 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>edit</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/station"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Edit Station</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-content>
+              <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+                <!-- <ion-item>
+                  <ion-label position="floating">Station Id</ion-label>
+                  <ion-input readonly type="text" name="id" #id="ngModel" [(ngModel)]="service.formData.id"></ion-input>
+                </ion-item> -->
 
-</ion-content>
+                <ion-item>
+                  <ion-label position="floating">Station Name</ion-label>
+                  <ion-input required minlength="2" type="text" class="" name="name" #name="ngModel"
+                    [(ngModel)]="service.formData.name"></ion-input>
+                  <div class="text-left text-danger" *ngIf="name.invalid && name.touched">
+                    Please enter Station Name.
+                  </div>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="floating">Station Address</ion-label>
+                  <ion-textarea name="address" #address="ngModel" [(ngModel)]="service.formData.address"></ion-textarea>
+                </ion-item>
+
+                <ion-button class="ion-margin" type="submit" [disabled]="form.invalid">Add Station</ion-button>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>
