@@ -1,0 +1,47 @@
+{
+    "statoni": [{
+            "id": 1,
+            "name": "Finance",
+            "address": ""
+        },
+        {
+            "id": 2,
+            "name": "IT",
+            "address": ""
+        },
+        {
+            "id": 3,
+            "name": "Support",
+            "address": ""
+        }, {
+            "id": 4,
+            "name": "Operation",
+            "address": ""
+        }
+    ],
+    "tank": [{
+            "id": 1,
+            "name": "Dominion Olorunfemi",
+            "stationId": "Finance",
+            "capacity": "Finance@gmail.com"
+        },
+        {
+            "id": 2,
+            "name": "Dominion Olorunfemi",
+            "stationId": "IT",
+            "capacity": "Finance@gmail.com"
+        },
+        {
+            "id": 3,
+            "name": "Dominion Olorunfemi",
+            "stationId": "Support",
+            "capacity": "Finance@gmail.com"
+        }, {
+            "id": 4,
+            "name": "Dominion Olorunfemi",
+            "stationId": "Operation",
+            "capacity": "Finance@gmail.com"
+        }
+    ]
+
+}

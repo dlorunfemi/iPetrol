@@ -15,14 +15,42 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   },
-  { path: 'station', loadChildren: './station/station.module#StationPageModule' },
-  { path: 'tank', loadChildren: './tank/tank.module#TankPageModule' },
-  { path: 'add', loadChildren: './tank/add/add.module#AddPageModule' },
-  { path: 'show', loadChildren: './tank/show/show.module#ShowPageModule' },
-  { path: 'edit', loadChildren: './tank/edit/edit.module#EditPageModule' },
-  { path: 'edit', loadChildren: './station/edit/edit.module#EditPageModule' },
-  { path: 'add', loadChildren: './station/add/add.module#AddPageModule' },
-  { path: 'show', loadChildren: './station/show/show.module#ShowPageModule' }
+  {
+    path: 'station',
+    children: [
+      {
+        path: '',
+        loadChildren: './station/show/show.module#ShowPageModule'
+      },
+      {
+        path: 'edit',
+        loadChildren: './station/edit/edit.module#EditPageModule'
+      },
+      {
+        path: 'add',
+        loadChildren: './station/add/add.module#AddPageModule'
+      },
+    ]
+  },
+
+  {
+    path: 'tank',
+    children: [
+      {
+        path: '',
+        loadChildren: './tank/show/show.module#ShowPageModule'
+      },
+      {
+        path: 'add',
+        loadChildren: './tank/add/add.module#AddPageModule'
+      },
+      {
+        path: 'edit',
+        loadChildren: './tank/edit/edit.module#EditPageModule'
+      },
+
+    ]
+  },
 ];
 
 @NgModule({

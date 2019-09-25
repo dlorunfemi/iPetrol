@@ -17,9 +17,19 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Station',
+      url: '/station',
+      icon: 'business'
+    },
+    {
+      title: 'Tanks',
+      url: '/tanks',
+      icon: 'battery-dead'
+    },
+    {
+      title: 'Fuel',
+      url: '/fuel',
+      icon: 'color-fill'
     }
   ];
 

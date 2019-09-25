@@ -1,9 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>show</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Station</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/station/add" routerDirection="forward">
+        <ion-icon name='add' slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-content>
+      <ion-item *ngFor="let s of station" [routerLink]="['/station', s.id]">
+        <ion-label>{{ s.name }}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
